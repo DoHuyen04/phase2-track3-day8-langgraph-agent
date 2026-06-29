@@ -1,0 +1,304 @@
+{
+  "total_questions": 10,
+  "passed_count": 3,
+  "failed_count": 7,
+  "overall_score": 0.3,
+  "results": [
+    {
+      "question_id": "gq_d10_01",
+      "question": "Theo chính sách hoàn tiền hiện hành, khách hàng có tối đa bao nhiêu ngày làm việc để gửi yêu cầu hoàn tiền sau khi đơn được xác nhận?",
+      "llm_answer": "Khách hàng có tối đa 7 ngày làm việc để gửi yêu cầu hoàn tiền sau khi đơn được xác nhận.",
+      "score": 1.0,
+      "checks": [
+        {
+          "type": "must_contain_any",
+          "passed": true,
+          "hits": [
+            "7 ngày",
+            "7 ngày làm việc"
+          ],
+          "misses": [],
+          "required": [
+            "7 ngày",
+            "7 ngày làm việc"
+          ]
+        },
+        {
+          "type": "must_not_contain",
+          "passed": true,
+          "violations": [],
+          "forbidden": [
+            "14 ngày",
+            "14 ngày làm việc"
+          ]
+        }
+      ],
+      "expected_doc_id": "policy_refund_v4",
+      "passed": true
+    },
+    {
+      "question_id": "gq_d10_02",
+      "question": "Đâu là loại sản phẩm bị loại khỏi điều kiện hoàn tiền?",
+      "llm_answer": "Các sản phẩm bị loại khỏi điều kiện hoàn tiền thường bao gồm hàng hóa đã qua sử dụng, sản phẩm giảm giá, sản phẩm không còn nguyên vẹn bao bì, hoặc sản phẩm thuộc danh mục không hoàn trả theo quy định của công ty.",
+      "score": 0.5,
+      "checks": [
+        {
+          "type": "must_contain_any",
+          "passed": false,
+          "hits": [],
+          "misses": [
+            "hàng kỹ thuật số",
+            "license key",
+            "subscription"
+          ],
+          "required": [
+            "hàng kỹ thuật số",
+            "license key",
+            "subscription"
+          ]
+        },
+        {
+          "type": "must_not_contain",
+          "passed": true,
+          "violations": [],
+          "forbidden": []
+        }
+      ],
+      "expected_doc_id": "policy_refund_v4",
+      "passed": false
+    },
+    {
+      "question_id": "gq_d10_03",
+      "question": "Finance Team xử lý yêu cầu hoàn tiền trong bao lâu?",
+      "llm_answer": "Finance Team thường xử lý yêu cầu hoàn tiền trong vòng 5-7 ngày làm việc.",
+      "score": 0.5,
+      "checks": [
+        {
+          "type": "must_contain_any",
+          "passed": false,
+          "hits": [],
+          "misses": [
+            "3-5 ngày làm việc",
+            "3 đến 5 ngày"
+          ],
+          "required": [
+            "3-5 ngày làm việc",
+            "3 đến 5 ngày"
+          ]
+        },
+        {
+          "type": "must_not_contain",
+          "passed": true,
+          "violations": [],
+          "forbidden": []
+        }
+      ],
+      "expected_doc_id": "policy_refund_v4",
+      "passed": false
+    },
+    {
+      "question_id": "gq_d10_04",
+      "question": "SLA phản hồi ban đầu cho ticket P1 là bao lâu?",
+      "llm_answer": "SLA phản hồi ban đầu cho ticket P1 là 1 giờ.",
+      "score": 0.5,
+      "checks": [
+        {
+          "type": "must_contain_any",
+          "passed": false,
+          "hits": [],
+          "misses": [
+            "15 phút",
+            "15p"
+          ],
+          "required": [
+            "15 phút",
+            "15p"
+          ]
+        },
+        {
+          "type": "must_not_contain",
+          "passed": true,
+          "violations": [],
+          "forbidden": []
+        }
+      ],
+      "expected_doc_id": "sla_p1_2026",
+      "passed": false
+    },
+    {
+      "question_id": "gq_d10_05",
+      "question": "SLA resolution cho ticket P1 là bao nhiêu giờ?",
+      "llm_answer": "SLA resolution cho ticket P1 là 1 giờ.",
+      "score": 0.5,
+      "checks": [
+        {
+          "type": "must_contain_any",
+          "passed": false,
+          "hits": [],
+          "misses": [
+            "4 giờ",
+            "4h"
+          ],
+          "required": [
+            "4 giờ",
+            "4h"
+          ]
+        },
+        {
+          "type": "must_not_contain",
+          "passed": true,
+          "violations": [],
+          "forbidden": []
+        }
+      ],
+      "expected_doc_id": "sla_p1_2026",
+      "passed": false
+    },
+    {
+      "question_id": "gq_d10_06",
+      "question": "Nếu không có phản hồi với ticket P1 sau bao lâu thì hệ thống auto escalate?",
+      "llm_answer": "Hệ thống sẽ tự động nâng cấp ticket P1 sau 30 phút không có phản hồi.",
+      "score": 0.5,
+      "checks": [
+        {
+          "type": "must_contain_any",
+          "passed": false,
+          "hits": [],
+          "misses": [
+            "10 phút"
+          ],
+          "required": [
+            "10 phút"
+          ]
+        },
+        {
+          "type": "must_not_contain",
+          "passed": true,
+          "violations": [],
+          "forbidden": []
+        }
+      ],
+      "expected_doc_id": "sla_p1_2026",
+      "passed": false
+    },
+    {
+      "question_id": "gq_d10_07",
+      "question": "Tài khoản bị khóa sau bao nhiêu lần đăng nhập sai liên tiếp?",
+      "llm_answer": "Tài khoản sẽ bị khóa sau 5 lần đăng nhập sai liên tiếp.",
+      "score": 1.0,
+      "checks": [
+        {
+          "type": "must_contain_any",
+          "passed": true,
+          "hits": [
+            "5 lần"
+          ],
+          "misses": [],
+          "required": [
+            "5 lần"
+          ]
+        },
+        {
+          "type": "must_not_contain",
+          "passed": true,
+          "violations": [],
+          "forbidden": []
+        }
+      ],
+      "expected_doc_id": "it_helpdesk_faq",
+      "passed": true
+    },
+    {
+      "question_id": "gq_d10_08",
+      "question": "VPN cho phép kết nối tối đa bao nhiêu thiết bị cùng lúc?",
+      "llm_answer": "Số lượng thiết bị kết nối cùng lúc qua VPN phụ thuộc vào nhà cung cấp dịch vụ VPN cụ thể. Bạn nên kiểm tra chính sách của nhà cung cấp mà bạn đang sử dụng để biết thông tin chính xác.",
+      "score": 0.5,
+      "checks": [
+        {
+          "type": "must_contain_any",
+          "passed": false,
+          "hits": [],
+          "misses": [
+            "2 thiết bị",
+            "2 device",
+            "2"
+          ],
+          "required": [
+            "2 thiết bị",
+            "2 device",
+            "2"
+          ]
+        },
+        {
+          "type": "must_not_contain",
+          "passed": true,
+          "violations": [],
+          "forbidden": []
+        }
+      ],
+      "expected_doc_id": "it_helpdesk_faq",
+      "passed": false
+    },
+    {
+      "question_id": "gq_d10_09",
+      "question": "Nhân viên dưới 3 năm kinh nghiệm được bao nhiêu ngày phép năm theo chính sách HR 2026?",
+      "llm_answer": "Nhân viên dưới 3 năm kinh nghiệm được 12 ngày phép năm theo chính sách HR 2026.",
+      "score": 1.0,
+      "checks": [
+        {
+          "type": "must_contain_any",
+          "passed": true,
+          "hits": [
+            "12 ngày",
+            "12 ngày phép năm"
+          ],
+          "misses": [],
+          "required": [
+            "12 ngày",
+            "12 ngày phép năm"
+          ]
+        },
+        {
+          "type": "must_not_contain",
+          "passed": true,
+          "violations": [],
+          "forbidden": [
+            "10 ngày phép năm",
+            "10 ngày phép"
+          ]
+        }
+      ],
+      "expected_doc_id": "hr_leave_policy",
+      "passed": true
+    },
+    {
+      "question_id": "gq_d10_10",
+      "question": "Level 4 Admin Access yêu cầu phê duyệt bởi ai?",
+      "llm_answer": "Level 4 Admin Access yêu cầu phê duyệt bởi quản lý cấp cao hoặc bộ phận IT.",
+      "score": 0.5,
+      "checks": [
+        {
+          "type": "must_contain_any",
+          "passed": false,
+          "hits": [],
+          "misses": [
+            "IT Manager",
+            "CISO"
+          ],
+          "required": [
+            "IT Manager",
+            "CISO"
+          ]
+        },
+        {
+          "type": "must_not_contain",
+          "passed": true,
+          "violations": [],
+          "forbidden": []
+        }
+      ],
+      "expected_doc_id": "access_control_sop",
+      "passed": false
+    }
+  ]
+}
